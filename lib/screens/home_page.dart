@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:consumindo_api/api/api_word.dart';
 import 'package:get/get.dart';
 import 'package:i18n_extension/default.i18n.dart';
+import 'package:i18n_extension/i18n_widget.dart';
 
 class Home_Page extends StatefulWidget {
   const Home_Page({super.key});
@@ -67,15 +68,17 @@ class _Home_Page extends State<Home_Page>{
                                  color: Colors.deepOrange,
                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
                                ),
-                               child: Text(
+                               child: I18n(
+                                 initialLocale: const Locale("pt","BR"),
+                                 child: Text(
                                    snapshot.data!.advice.i18n,
                                    style: const TextStyle(
                                      fontSize: 20,
                                      fontStyle: FontStyle.italic,
                                      color: Colors.white,
-
                                    ),
-                                 textAlign: TextAlign.center,
+                                   textAlign: TextAlign.center,
+                                 ),
                                ),
                              ),
                            ),
